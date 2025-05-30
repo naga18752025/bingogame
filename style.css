@@ -1,0 +1,326 @@
+
+
+body {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: black;
+  background-image: url('./renga.jpeg');
+  background-size: 600px auto;
+  background-repeat: repeat;
+  background-position: center;
+
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1{
+  margin-top: 3vh;
+  padding-top: 0;
+  margin-bottom: 5vh;
+  border-bottom: 2px solid #333;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  -webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+
+.bingo-card {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.bingo-card:hover {
+  transform: scale(1.01);
+}
+
+.header, .grid {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  text-align: center;
+}
+
+.header div {
+  font-size: 20px;
+  font-weight: bold;
+  background: #74530b;
+  color: #fff;
+  padding: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #634406;
+}
+
+.grid div {
+  font-size: 18px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  user-select: none;
+  display: flex;
+  justify-content: center;       
+  text-align: center;   
+  vertical-align: center;  
+}
+
+.grid div:hover{
+  background-color: #fff6e0;
+}
+
+/* 穴が開いた状態 */
+.marked {
+  background-color: #fffdb8;
+  position: relative;
+  display: flex;
+  justify-content: center;       
+  text-align: center;   
+  vertical-align: center;  
+  font-weight: bold;
+}
+
+.marked::after {
+  content: "⭐️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  opacity: 0.8;
+  animation: starPop 0.4s ease;
+  pointer-events: none;
+}
+
+.free {
+  display: flex;
+  justify-content: center;       
+  text-align: center;   
+  vertical-align: center;  
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.bingo-message {
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  animation: flash 1s infinite alternate;
+  margin-bottom: 20px;
+}
+
+@keyframes flash {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.container {
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+a{
+  margin-top: 10vh;
+  margin-bottom: 0;
+  padding: 0;
+  display: flex;
+  border-bottom: 2px solid #333;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+a:hover{
+  color: #c20000;
+}
+
+
+.btn{
+  display: flex;
+  margin-top: 10px; 
+  color: #000000;                   
+  font-size: 10px; 
+  border: none;
+  background: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn2{
+  margin-top: 10px; 
+  color: #000000;                   
+  font-size: 10px; 
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.btn2:hover{
+  background-color: #ffffff
+}
+
+.pas{
+  display: flex;
+  justify-content: center;
+}
+
+#password-form input {
+  font-size: 16px;
+}
+
+#password-form button {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#kokomade{
+  margin: 2vh auto 0 auto; 
+  width: 270px;
+  background-color: #c9b3a2;
+  color: #373737;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.btn3 {
+  font-size: 16px;
+  color: #ffffff;
+  margin: 10px auto 0 auto;
+  background: linear-gradient(to bottom, #db8025, #673a0e); /* グラデーション */
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.7); /* 浮き出る影 */
+  transition: all 0.2s ease;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4); /* テキストに陰影 */
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+.btn3.active-style {
+  transform: translateY(1px); /* 押し込まれる */
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3); /* 内側の影で凹む */
+}
+
+.btn4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px auto 0 auto;
+}
+
+@keyframes starPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+}
+
+.mode{
+  display: flex;
+  margin-top: 10px;                 
+  font-size: 10px; 
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.mode2{
+  margin: 10px auto 0 auto;
+  width: 150px;
+  height: 30px;
+  color: #ffffff;                   
+  font-size: 10px; 
+  border: none;
+  background-color: #333;
+  border-radius:   5px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 3px solid #737373;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.mode2.active-style {
+  color: #000000;
+  background-color: #d9d9d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #494949;
+}
+
+.rotate-star::after {
+  animation: rotateStar 0.8s ease-out forwards;
+}
+
+@keyframes rotateStar {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99999;
+  animation: flashEffect 0.6s ease;
+}
+
+@keyframes flashEffect {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
